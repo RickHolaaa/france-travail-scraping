@@ -1,34 +1,34 @@
-# HrFlow - Test Technique : Job Crawler
+# HrFlow - Technical Test: Job Crawler
 
-Ce projet a été réalisé dans le cadre d'un **test technique pour l'entreprise HrFlow**.
+This project was developed as part of a **technical test for the company HrFlow**.
 
-L'objectif est de concevoir un crawler capable de scraper des offres d'emploi depuis la plateforme **France Travail (anciennement Pôle Emploi)** et de les injecter automatiquement dans une board HrFlow via leur API.
+The objective is to design a crawler capable of scraping job offers from the **France Travail platform (formerly Pôle Emploi)** and automatically injecting them into a HrFlow board via their API.
 
 ## 📄 Description
 
-Le projet est structuré sous forme de notebook Jupyter :  
+The project is structured as a Jupyter Notebook:  
 - `crawler.ipynb`
 
-Le script réalise les étapes suivantes :
+The script performs the following steps:
 
-1. **Connexion API HrFlow**
-   - Utilisation du SDK HrFlow pour interagir avec l'API de stockage des offres.
-   - Chargement des clés API via un fichier `.env` local.
+1. **HrFlow API Connection**
+   - Uses the HrFlow SDK to interact with the job storage API.
+   - Loads API keys from a local `.env` file.
 
-2. **Scraping dynamique avec Selenium**
-   - Ouverture automatique du site France Travail.
-   - Parcours des différentes catégories d'offres.
-   - Extraction des informations complètes des annonces :
-     - Titre, description, responsabilités, exigences, compétences, entreprise, type de contrat, horaires, salaire, etc.
+2. **Dynamic Web Scraping with Selenium**
+   - Automatically opens the France Travail website.
+   - Navigates through the different job categories.
+   - Extracts complete job offer information:
+     - Title, description, responsibilities, requirements, skills, company, contract type, working hours, salary, etc.
 
-3. **Géocodage avec Geopy**
-   - Récupération des coordonnées géographiques des adresses extraites.
+3. **Geocoding with Geopy**
+   - Retrieves geographic coordinates from extracted addresses.
 
-4. **Injection dans HrFlow**
-   - Transformation des données en JSON formaté selon les spécifications HrFlow.
-   - Upload des offres dans un board HrFlow via `job.storing.add_json()`.
+4. **Injection into HrFlow**
+   - Transforms the extracted data into JSON formatted according to HrFlow specifications.
+   - Uploads the offers to a HrFlow board using `job.storing.add_json()`.
 
-## 🔧 Technologies utilisées
+## 🔧 Technologies Used
 
 - Python 3.x
 - Jupyter Notebook
